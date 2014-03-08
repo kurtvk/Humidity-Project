@@ -1,3 +1,12 @@
+/*
+
+Kurt.v.k@gmail.com
+funky v2 ....!!!Program as LILYPAD USB!!!!
+
+....... DHT22 - arduino funky v2 - sending data 
+
+*/
+
 //SimpleSend
 //RFM12B wireless demo - transmitter - no ack
 #include <DHT22.h>
@@ -42,7 +51,7 @@ void loop(void)
   
   // The sensor can only be read from every 1-2s, and requires a minimum
   // 2s warm-up after power-on.
-  delay(10000);
+  delay(6000);
   
   Serial.print("Requesting data...");
   errorCode = myDHT22.readData();
@@ -57,11 +66,11 @@ void loop(void)
       // Alternately, with integer formatting which is clumsier but more compact to store and
 	  // can be compared reliably for equality:
 	  //	  
-      char buf[128];
-      sprintf(buf, "Integer-only reading: Temperature %hi.%01hi C, Humidity %i.%01i %% RH",
-                   myDHT22.getTemperatureCInt()/10, abs(myDHT22.getTemperatureCInt()%10),
-                   myDHT22.getHumidityInt()/10, myDHT22.getHumidityInt()%10);
-      Serial.println(buf);
+      //char buf[128];
+      //sprintf(buf, "Integer-only reading: Temperature %hi.%01hi C, Humidity %i.%01i %% RH",
+           //        myDHT22.getTemperatureCInt()/10, abs(myDHT22.getTemperatureCInt()%10),
+            //       myDHT22.getHumidityInt()/10, myDHT22.getHumidityInt()%10);
+      //Serial.println(buf);
       break;
     case DHT_ERROR_CHECKSUM:
       Serial.print("check sum error ");
